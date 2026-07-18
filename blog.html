@@ -15,10 +15,11 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+      media="print" onload="this.media='all'"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
   </head>
   <body>
     <!-- TOP BAR -->
@@ -165,7 +166,7 @@
       <div class="container header-inner">
         <a href="index.html" class="logo">
           <div class="logo-icon">
-            <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="auto" height="auto" style="object-fit: contain;">
+            <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="48" height="48" style="object-fit: contain;" decoding="async">
           </div>
           <div class="logo-text">
             <h1>مكتب هاني الحفني</h1>
@@ -330,7 +331,7 @@
           <div class="footer-col brand-col">
             <div class="footer-logo">
               <div class="logo-icon">
-                <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="auto" height="auto" style="object-fit: contain;">
+                <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="48" height="48" style="object-fit: contain;" decoding="async">
               </div>
               <div class="logo-text">
                 <div class="footer-logo-title">مكتب هاني الحفني</div>
@@ -402,7 +403,7 @@
       </div>
     </footer>
 
-    <script src="js/articles.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/articles.js" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

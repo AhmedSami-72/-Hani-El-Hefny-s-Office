@@ -180,16 +180,22 @@
       content="https://www.HanyElhefny.de/assets/images/seo/og-image.webp"
     />
 
+    <!-- Preload first hero image -->
+    <link rel="preload" href="assets/images/home/hero-slide-1.webp" as="image">
     <!-- Google Fonts: Alexandria for premium Arabic typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+      media="print" onload="this.media='all'"
     />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/responsive.min.css" />
   </head>
   <body>
     <!-- TOP BAR -->
@@ -328,8 +334,8 @@
       <div class="container header-inner">
         <a href="#home" class="logo">
           <div class="logo-icon">
-            <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="auto" height="auto" style="object-fit: contain;">
-          </div>
+              <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="48" height="48" style="object-fit: contain;" decoding="async">
+            </div>
           <div class="logo-text">
             <h1>مكتب هاني الحفني</h1>
             <span>للمحاماة والاستشارات القانونية</span>
@@ -365,6 +371,7 @@
       </div>
     </header>
 
+    <main>
     <!-- HERO SECTION -->
     <section class="hero-slider-section" id="home">
       <div class="hero-slider" id="heroSlider">
@@ -386,6 +393,7 @@
               </p>
               <div class="hero-actions">
                 <a href="#contact" class="btn hero-btn-primary">احجز استشارة</a>
+                <a href="#services" class="btn hero-btn-secondary">عرض الخدمات</a>
               </div>
             </div>
           </div>
@@ -411,6 +419,7 @@
               </p>
               <div class="hero-actions">
                 <a href="#contact" class="btn hero-btn-primary">احجز استشارة</a>
+                <a href="#services" class="btn hero-btn-secondary">عرض الخدمات</a>
               </div>
             </div>
           </div>
@@ -420,7 +429,7 @@
         <div
           class="hero-slide"
           style="
-            background-image: url(&quot;assets/images/home/hero-slide-3.png&quot;);
+            background-image: url(&quot;assets/images/home/hero-slide-3.webp&quot;);
           "
         >
           <div class="slide-overlay"></div>
@@ -434,6 +443,7 @@
               </p>
               <div class="hero-actions">
                 <a href="#contact" class="btn hero-btn-primary">احجز استشارة</a>
+                <a href="#services" class="btn hero-btn-secondary">عرض الخدمات</a>
               </div>
             </div>
           </div>
@@ -443,7 +453,7 @@
         <div
           class="hero-slide"
           style="
-            background-image: url(&quot;assets/images/home/hero-slide-4.png&quot;);
+            background-image: url(&quot;assets/images/home/hero-slide-4.webp&quot;);
           "
         >
           <div class="slide-overlay"></div>
@@ -457,6 +467,7 @@
               </p>
               <div class="hero-actions">
                 <a href="#contact" class="btn hero-btn-primary">احجز استشارة</a>
+                <a href="#services" class="btn hero-btn-secondary">عرض الخدمات</a>
               </div>
             </div>
           </div>
@@ -661,18 +672,19 @@
 
             <!-- About Section CTA buttons -->
             <div class="about-ctas">
+              <div class="about-cta-horizontal-divider"></div>
               <a href="tel:01065696741" class="about-cta-btn about-cta-phone">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
-                <span>هاتف: 01065696741</span>
+                <span>01065696741</span>
               </a>
               <a href="mailto:lawerhany22@gmail.com" class="about-cta-btn about-cta-email">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span>بريد: lawerhany22@gmail.com</span>
+                <span>lawerhany22@gmail.com</span>
               </a>
             </div>
           </div>
@@ -685,6 +697,10 @@
                   alt="الأستاذ هاني الحفني - مؤسس المكتب"
                   class="about-img-el"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="500"
                 />
                 <!-- Experience Badge (٢٠+ عامًا من الخبرة) -->
                 <div class="about-experience-badge">
@@ -704,6 +720,10 @@
                   alt="مكتب الاستشارات القانونية"
                   class="about-img-el"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width="350"
+                  height="250"
                 />
                 <!-- Elegant Trust / Security Badge ("الثقة والالتزام") -->
                 <div class="about-overlay-badge">
@@ -734,6 +754,10 @@
                   alt="فريق مكتب هاني الحفني للمحاماة"
                   class="about-img-el"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
+                  width="350"
+                  height="250"
                 />
                 <!-- Third Badge: عضويات بارزة -->
                 <div class="about-association-badge">
@@ -1406,10 +1430,6 @@
 
     <!-- LOCATION MAP SECTION -->
     <section class="section map-section" id="location">
-      <div class="map-header center">
-        <h2 class="map-title">موقع المكتب</h2>
-        <p class="map-subtitle">يمكنكم زيارة المكتب أو التواصل معنا مباشرة.</p>
-      </div>
       <div class="map-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13813.064501255562!2d31.233334!3d30.044420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14584092b3c2cbb9%3A0xc6ad5cbca22c452e!2sDowntown%20Cairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1689269502742!5m2!1sen!2seg"
@@ -1441,6 +1461,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="main-footer">
@@ -1449,7 +1470,7 @@
           <div class="footer-col brand-col">
             <div class="footer-logo">
               <div class="logo-icon">
-                <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="auto" height="auto" style="object-fit: contain;">
+                <img src="assets/images/logo/logo.webp" alt="مكتب هاني الحفني" width="48" height="48" style="object-fit: contain;" decoding="async">
               </div>
               <div class="logo-text">
                 <div class="footer-logo-title">مكتب هاني الحفني</div>
@@ -1522,7 +1543,7 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="js/articles.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/articles.js" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

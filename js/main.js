@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         articlesHTML += `
                     <article class="article-card">
                         <div class="article-img">
-                            <img src="${pathPrefix}${article.image}" alt="${article.title}" loading="lazy">
+                            <img src="${pathPrefix}${article.image}" alt="${article.title}" loading="lazy" decoding="async" width="400" height="250">
                         </div>
                         <div class="article-content">
                             <span class="article-category">${article.category}</span>
